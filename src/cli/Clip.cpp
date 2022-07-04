@@ -118,6 +118,15 @@ int Clip::executeWithDatabase(QSharedPointer<Database> database, QSharedPointer<
 
         found = true;
         value = entry->totp();
+    } else if (EntryAttributes::TopLevelAttributes.contains(selectedAttribute)) {
+        if (selectedAttribute == EntryAttributes::TagsKey) {
+            value = entry->tags();
+            found = true;
+        }
+        if (selectedAttribute == EntryAttributes::UuidKey) {
+            value = entry->uuid().toString();
+            found = true;
+        }
     } else {
         QStringList attrs = Utils::findAttributes(*entry->attributes(), selectedAttribute);
         if (attrs.size() > 1) {
