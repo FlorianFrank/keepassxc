@@ -32,8 +32,7 @@ const QStringList EntryAttributes::DefaultAttributes(QStringList()
                                                      << TitleKey << UserNameKey << PasswordKey << URLKey << NotesKey);
 const QString EntryAttributes::UuidKey = "Uuid";
 const QString EntryAttributes::TagsKey = "Tags";
-const QStringList EntryAttributes::TopLevelAttributes(QStringList()
-                                                     << UuidKey << TagsKey);
+const QStringList EntryAttributes::TopLevelAttributes(QStringList() << UuidKey << TagsKey);
 const QString EntryAttributes::TotpKey = "totp";
 
 const QString EntryAttributes::WantedFieldGroupName = "WantedField";

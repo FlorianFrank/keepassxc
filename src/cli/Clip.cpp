@@ -35,8 +35,7 @@ const QCommandLineOption Clip::AttributeOption = QCommandLineOption(
     "password");
 
 const QCommandLineOption Clip::TotpOption =
-    QCommandLineOption(QStringList() << "t"
-                                     << EntryAttributes::TotpKey,
+    QCommandLineOption(QStringList() << "t" << EntryAttributes::TotpKey,
                        QObject::tr("Copy the current TOTP to the clipboard (equivalent to \"-a totp\")."));
 
 const QCommandLineOption Clip::BestMatchOption =
