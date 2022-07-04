@@ -24,7 +24,7 @@
 #include <QCommandLineParser>
 
 const QCommandLineOption Show::TotpOption = QCommandLineOption(QStringList() << "t"
-                                                                             << "totp",
+                                                                             << EntryAttributes::TotpKey,
                                                                QObject::tr("Show the entry's current TOTP."));
 
 const QCommandLineOption Show::ProtectedAttributesOption =

@@ -36,7 +36,7 @@ const QCommandLineOption Clip::AttributeOption = QCommandLineOption(
 
 const QCommandLineOption Clip::TotpOption =
     QCommandLineOption(QStringList() << "t"
-                                     << "totp",
+                                     << EntryAttributes::TotpKey,
                        QObject::tr("Copy the current TOTP to the clipboard (equivalent to \"-a totp\")."));
 
 const QCommandLineOption Clip::BestMatchOption =
@@ -110,7 +110,7 @@ int Clip::executeWithDatabase(QSharedPointer<Database> database, QSharedPointer<
     QString selectedAttribute = parser->value(AttributeOption);
     QString value;
     bool found = false;
-    if (parser->isSet(TotpOption) || selectedAttribute == "totp") {
+    if (parser->isSet(TotpOption) || selectedAttribute == EntryAttributes::TotpKey) {
         if (!entry->hasTotp()) {
             err << QObject::tr("Entry with path %1 has no TOTP set up.").arg(entryPath) << endl;
             return EXIT_FAILURE;
